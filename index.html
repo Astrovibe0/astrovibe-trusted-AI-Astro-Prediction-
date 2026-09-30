@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+
+<title>
+AstroVibe - Love Compatibility
+</title>
+
+
+<style>
+
+/* =========================================
+   BASIC RESET
+========================================= */
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+
+        radial-gradient(
+            circle at top,
+            #70267e 0%,
+            #2b0d38 45%,
+            #08030c 100%
+        );
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+}
+
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.container {
+
+    width: 100%;
+
+    max-width: 450px;
+
+    background:
+        rgba(255,255,255,0.09);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.18);
+
+    border-radius: 30px;
+
+    padding: 30px 25px;
+
+    text-align: center;
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(0,0,0,0.5);
+
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 6px;
+
+}
+
+
+.subtitle {
+
+    color: #ead1ef;
+
+    font-size: 15px;
+
+    margin-bottom: 28px;
+
+}
+
+
+/* =========================================
+   FORM LABELS
+========================================= */
+
+label {
+
+    display: block;
+
+    text-align: left;
+
+    margin-top: 16px;
+
+    margin-bottom: 7px;
+
+    color: #f7e5fa;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+input,
+textarea {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,0.12);
+
+    color: white;
+
+    font-size: 16px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+}
+
+
+input {
+
+    height: 52px;
+
+}
+
+
+textarea {
+
+    min-height: 110px;
+
+    resize: vertical;
+
+}
+
+
+input::placeholder,
+textarea::placeholder {
+
+    color: #cbb6cf;
+
+}
+
+
+/* Date input */
+
+input[type="date"] {
+
+    color-scheme: dark;
+
+}
+
+
+/* =========================================
+   NOTICE
+========================================= */
+
+.notice {
+
+    margin-top: 18px;
+
+    margin-bottom: 18px;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    color: #d8c9dc;
+
+}
+
+
+/* =========================================
+   MAIN BUTTON
+========================================= */
+
+button {
+
+    width: 100%;
+
+    border: none;
+
+    padding: 17px;
+
+    border-radius: 16px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ff3f81,
+            #a842ff
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(255,63,129,0.30);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+
+}
+
+
+button:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+
+        0 14px 35px
+        rgba(255,63,129,0.40);
+
+}
+
+
+/* =========================================
+   HIDE LOADING / RESULT INITIALLY
+========================================= */
+
+#loading,
+#result {
+
+    display: none;
+
+}
+
+
+/* =========================================
+   HEART
+========================================= */
+
+.heart {
+
+    font-size: 70px;
+
+    animation:
+        heartbeat 1.1s infinite;
+
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.15);
+
+    }
+
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.loading-title {
+
+    font-size: 23px;
+
+    margin-top: 5px;
+
+}
+
+
+#loadingText {
+
+    color: #dbc8df;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================
+   RESULT
+========================================= */
+
+#couple {
+
+    font-size: 22px;
+
+    margin-top: 15px;
+
+}
+
+
+.score {
+
+    font-size: 68px;
+
+    font-weight: 900;
+
+    margin: 10px 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ff6b9d,
+            #d98cff
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color: transparent;
+
+}
+
+
+.message {
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
+
+}
+
+
+.small {
+
+    color: #dbcbe0;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   DOUBT DISPLAY
+========================================= */
+
+.doubt-result {
+
+    margin-top: 22px;
+
+    padding: 16px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    text-align: left;
+
+    color: #eadcf0;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+
+.doubt-title {
+
+    font-weight: 700;
+
+    color: white;
+
+}
+
+
+/* =========================================
+   THANK YOU
+========================================= */
+
+.thankyou {
+
+    margin-top: 25px;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    color: #ffd6ef;
+
+}
+
+
+/* =========================================
+   TRY AGAIN BUTTON
+========================================= */
+
+.back {
+
+    margin-top: 20px;
+
+    background:
+        rgba(255,255,255,0.12);
+
+    box-shadow: none;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:480px) {
+
+    body {
+
+        padding: 12px;
+
+    }
+
+
+    .container {
+
+        padding:
+            25px 20px;
+
+        border-radius: 25px;
+
+    }
+
+
+    .logo {
+
+        font-size: 30px;
+
+    }
+
+
+    .score {
+
+        font-size: 60px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- ==================================================
+     FORM SECTION
+================================================== -->
+
+<div id="form">
+
+
+<div class="logo">
+
+🔮 AstroVibe
+
+</div>
+
+
+<div class="subtitle">
+
+Discover Your Love Compatibility ❤️
+
+</div>
+
+
+
+<!-- YOUR NAME -->
+
+<label>
+
+Your Name
+
+</label>
+
+
+<input
+
+    id="name"
+
+    type="text"
+
+    placeholder="Enter your name"
+
+    autocomplete="name"
+
+>
+
+
+
+<!-- DATE OF BIRTH -->
+
+<label>
+
+Date of Birth
+
+</label>
+
+
+<input
+
+    id="dob"
+
+    type="date"
+
+>
+
+
+
+<!-- CRUSH NAME -->
+
+<label>
+
+Crush Name
+
+</label>
+
+
+<input
+
+    id="crush"
+
+    type="text"
+
+    placeholder="Enter your crush's name"
+
+>
+
+
+
+<!-- LOVE DOUBT -->
+
+<label>
+
+💭 Ask Your Doubts Related to Your Love / Relationship
+
+</label>
+
+
+<textarea
+
+    id="doubt"
+
+    placeholder="Ask anything about your love or relationship..."
+
+></textarea>
+
+
+
+<!-- DISCLOSURE -->
+
+<div class="notice">
+
+By clicking Calculate, the information you enter,
+including your name, date of birth, crush name and
+relationship question, along with the compatibility
+result, will be submitted to AstroVibe.
+
+</div>
+
+
+
+<!-- CALCULATE BUTTON -->
+
+<button onclick="calculate()">
+
+❤️ Calculate Love Compatibility
+
+</button>
+
+
+</div>
+
+
+
+<!-- ==================================================
+     LOADING SECTION
+================================================== -->
+
+<div id="loading">
+
+
+<div class="heart">
+
+💜
+
+</div>
+
+
+<h2 class="loading-title">
+
+Reading the Stars...
+
+</h2>
+
+
+<p id="loadingText">
+
+Aligning cosmic energies...
+
+</p>
+
+
+</div>
+
+
+
+<!-- ==================================================
+     RESULT SECTION
+================================================== -->
+
+<div id="result">
+
+
+<div class="heart">
+
+❤️
+
+</div>
+
+
+<h2 id="couple">
+
+</h2>
+
+
+<div
+    class="score"
+    id="score"
+>
+
+</div>
+
+
+<div
+    class="message"
+    id="message"
+>
+
+</div>
+
+
+<p class="small">
+
+✨ Your cosmic energies show
+a fascinating connection.
+
+<br><br>
+
+💫 The stars have something
+interesting to say about this pairing.
+
+</p>
+
+
+
+<!-- LOVE QUESTION -->
+
+<div class="doubt-result">
+
+
+<div class="doubt-title">
+
+💭 Your Love Question
+
+</div>
+
+
+<br>
+
+
+<span id="doubtDisplay">
+
+</span>
+
+
+</div>
+
+
+
+<!-- THANK YOU -->
+
+<div class="thankyou">
+
+🙏 Thank You For Choosing AstroVibe ❤️
+
+</div>
+
+
+
+<!-- TRY AGAIN -->
+
+<button
+    class="back"
+    onclick="location.reload()"
+>
+
+🔮 Try Another
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =====================================================
+   🔴🔴🔴 IMPORTANT — CHANGE ONLY THIS URL 🔴🔴🔴
+
+   Paste your Google Apps Script Web App URL here.
+
+   It MUST end with /exec
+
+   Example:
+
+   https://script.google.com/macros/s/XXXXXXXX/exec
+
+===================================================== */
+
+
+const SCRIPT_URL =
+
+"https://script.google.com/macros/s/AKfycbwapSRQDr0AVlQ7cNJnEZ23mqa3x6mxmKadTSLklgYmjtdnAnawrKba9z3aO7dD2BDB/exec";
+
+
+
+/* =====================================================
+   GENERATE COMPATIBILITY SCORE
+===================================================== */
+
+function generateScore(
+    name,
+    dob,
+    crush
+) {
+
+
+    const text =
+
+        name.toLowerCase() +
+
+        dob +
+
+        crush.toLowerCase();
+
+
+    let total = 0;
+
+
+    for (
+
+        let i = 0;
+
+        i < text.length;
+
+        i++
+
+    ) {
+
+
+        total +=
+
+            text.charCodeAt(i)
+            *
+            (i + 1);
+
+
+    }
+
+
+    return 60 + (total % 41);
+
+}
+
+
+
+/* =====================================================
+   COMPATIBILITY MESSAGE
+===================================================== */
+
+function getMessage(score) {
+
+
+    if (score >= 95) {
+
+        return "💘 An Extraordinary Connection!";
+
+    }
+
+
+    if (score >= 90) {
+
+        return "💕 A Powerful Romantic Connection!";
+
+    }
+
+
+    if (score >= 80) {
+
+        return "❤️ Strong Romantic Chemistry!";
+
+    }
+
+
+    if (score >= 70) {
+
+        return "💫 Promising Cosmic Connection!";
+
+    }
+
+
+    return "✨ An Interesting Connection!";
+
+}
+
+
+
+/* =====================================================
+   MAIN CALCULATOR
+===================================================== */
+
+async function calculate() {
+
+
+    /* GET NAME */
+
+    const name =
+
+        document
+        .getElementById("name")
+        .value
+        .trim();
+
+
+
+    /* GET DOB */
+
+    const dob =
+
+        document
+        .getElementById("dob")
+        .value
+        .trim();
+
+
+
+    /* GET CRUSH */
+
+    const crush =
+
+        document
+        .getElementById("crush")
+        .value
+        .trim();
+
+
+
+    /* GET DOUBT */
+
+    const doubt =
+
+        document
+        .getElementById("doubt")
+        .value
+        .trim();
+
+
+
+    /* ================================================
+       VALIDATION
+    ================================================ */
+
+
+    if (!name) {
+
+        alert(
+            "Please enter your name."
+        );
+
+        return;
+
+    }
+
+
+    if (!dob) {
+
+        alert(
+            "Please enter your date of birth."
+        );
+
+        return;
+
+    }
+
+
+    if (!crush) {
+
+        alert(
+            "Please enter your crush's name."
+        );
+
+        return;
+
+    }
+
+
+    if (!doubt) {
+
+        alert(
+            "Please enter your love or relationship doubt."
+        );
+
+        return;
+
+    }
+
+
+
+    /* ================================================
+       GENERATE SCORE
+    ================================================ */
+
+
+    const score =
+
+        generateScore(
+            name,
+            dob,
+            crush
+        );
+
+
+
+    /* ================================================
+       SHOW LOADING
+    ================================================ */
+
+
+    document
+        .getElementById("form")
+        .style.display =
+        "none";
+
+
+    document
+        .getElementById("loading")
+        .style.display =
+        "block";
+
+
+    const loadingText =
+
+        document
+        .getElementById("loadingText");
+
+
+
+    loadingText.innerText =
+
+        "Aligning cosmic energies...";
+
+
+
+    setTimeout(() => {
+
+        loadingText.innerText =
+
+            "Analyzing romantic vibrations...";
+
+    }, 1000);
+
+
+
+    setTimeout(() => {
+
+        loadingText.innerText =
+
+            "Reading relationship energies...";
+
+    }, 2000);
+
+
+
+    setTimeout(() => {
+
+        loadingText.innerText =
+
+            "Calculating compatibility...";
+
+    }, 3000);
+
+
+
+    /* ================================================
+       SEND DATA TO GOOGLE APPS SCRIPT
+    ================================================ */
+
+
+    try {
+
+
+        await fetch(
+
+            SCRIPT_URL,
+
+            {
+
+                method:
+                    "POST",
+
+
+                mode:
+                    "no-cors",
+
+
+                headers: {
+
+                    "Content-Type":
+                        "text/plain;charset=utf-8"
+
+                },
+
+
+                body:
+
+                    JSON.stringify({
+
+                        name:
+                            name,
+
+                        dob:
+                            dob,
+
+                        crush:
+                            crush,
+
+                        doubt:
+                            doubt,
+
+                        score:
+                            score
+
+                    })
+
+            }
+
+        );
+
+
+    }
+
+    catch(error) {
+
+
+        console.log(
+
+            "Submission error:",
+
+            error
+
+        );
+
+
+    }
+
+
+
+    /* ================================================
+       SHOW RESULT
+    ================================================ */
+
+
+    setTimeout(() => {
+
+
+        document
+            .getElementById("loading")
+            .style.display =
+            "none";
+
+
+        document
+            .getElementById("result")
+            .style.display =
+            "block";
+
+
+
+        /* COUPLE */
+
+        document
+            .getElementById("couple")
+            .innerText =
+
+            name +
+            " ❤️ " +
+            crush;
+
+
+
+        /* SCORE */
+
+        document
+            .getElementById("score")
+            .innerText =
+
+            score +
+            "%";
+
+
+
+        /* MESSAGE */
+
+        document
+            .getElementById("message")
+            .innerText =
+
+            getMessage(score);
+
+
+
+        /* DOUBT */
+
+        document
+            .getElementById("doubtDisplay")
+            .innerText =
+
+            doubt;
+
+
+    }, 4000);
+
+}
+
+</script>
+
+
+</body>
+
+</html>
